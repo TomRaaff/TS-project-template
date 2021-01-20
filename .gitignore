@@ -4,3 +4,4 @@ TS-project-template.iml
 node_modules/
 coverage/
 .idea/
+!.idea/codeStyles/*
