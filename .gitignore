@@ -1,0 +1,6 @@
+package-lock.json
+dist/
+TS-project-template.iml
+node_modules/
+coverage/
+.idea/
