@@ -1,6 +1,8 @@
 # TS-project-template
 Template project for TypeScript applications
 
+> You can read about this repo in [this blogpost](https://blog.jcore.com/2021/01/how-to-set-up-a-vanilla-ts-application/)
+
 ## tech-stack
 - This project uses: TypeScript, HTML, and CSS
 - Package manager: npm
