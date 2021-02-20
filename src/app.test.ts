@@ -1,8 +1,8 @@
 import { describe, it, expect } from '@jest/globals';
-import start from './app';
+import app from './app';
 
 describe('App', () => {
 	it('should have a start function', () => {
-		expect(typeof start).toBe('function');
+		expect(typeof app).toBe('function');
 	});
 });
