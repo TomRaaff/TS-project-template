@@ -1,8 +1,11 @@
 # TS-project-template
 Template project for TypeScript applications
 
+### Requirements
+- install sass: `npm install -g sass`
+
 ## tech-stack
-- This project uses: TypeScript, HTML, and CSS
+- This project uses: TypeScript, HTML, and SASS
 - Package manager: npm
 - Testing framework: Jest
 - Build-tool: Webpack
@@ -21,3 +24,9 @@ Template project for TypeScript applications
 - Unit tests will NOT be included in the bundling
 - Contains partial browser CSS reset and included a font
 - contains a LOG.md file to keep notes
+
+## to rename:
+- project folder
+- readme
+- index.html `<title> and <main>`
+- package.json name
