@@ -1,8 +1,5 @@
-/*
-	start writing your app!
- */
-export default function app() {
-	console.log('Lets build an app!');
+export default function start() {
+	console.log('Go build something pretty!');
 }
 
-app();
+start();
