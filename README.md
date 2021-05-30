@@ -32,3 +32,12 @@ Template project for TypeScript applications
 - readme
 - index.html `<title> and <main>`
 - package.json name
+
+## switch git repo:
+More info: https://gist.github.com/niksumeiko/8972566
+1. create a new git repo
+2. git remote add new-origin git@github.com:user/repo.git
+3. git push --all new-origin
+4. git remote -v
+5. git remote rm origin
+6. git remote rename new-origin origin
