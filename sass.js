@@ -5,7 +5,6 @@ var pkg = require('./package.json');
 
 // Configs
 var configs = {
-	name: 'BuildToolsCookbook',
 	files: ['main.scss'],
 	pathIn: 'src/scss',
 	pathOut: 'dist/css',
@@ -16,7 +15,7 @@ var configs = {
 };
 
 // Banner
-var banner = `/*! ${configs.name ? configs.name : pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} ${pkg.author.name} | ${pkg.license} License | ${pkg.repository.url} */`;
+var banner = `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} ${pkg.author.name} | ${pkg.license} License | ${pkg.repository.url} */`;
 
 var getOptions = function (file, filename, minify) {
 	return {
@@ -73,6 +72,6 @@ var parseSass = function (file, minify) {
 configs.files.forEach(function (file) {
     parseSass(file);
     if (configs.minify) {
-	    parseSass(file, true);
+	    parseSass(file, configs.minify);
     }
 });
