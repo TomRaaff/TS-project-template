@@ -274,6 +274,10 @@ Regardless of which task you use, be sure to delete any tasks you're not using f
 npm-run-all -p js css svg img copy
 ```
 
+#### What 'build' DOES NOT do:
+- uglify all JS
+- bundle all JS into a single file. 
+    Instead, it bundles based on the input files you assign in the rollup config. So it is more modular.
 
 ### Watch for Changes
 
