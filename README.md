@@ -30,7 +30,8 @@ The template uses the `npm run` command to run tasks. These work on macOS, Linux
 
 ```bash
 # Main Tasks
-npm run start # run a localhost server that reloads when files change
+npm start      # run a localhost server that reloads when files change]
+npm run test   # run tests
 npm run ts     # compile ts
 npm run js     # compile and minify
 npm run css    # compile and minify Sass into CSS

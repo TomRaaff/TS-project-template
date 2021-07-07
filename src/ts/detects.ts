@@ -1,1 +1,3 @@
-console.log('detects.ts loaded');
+export function addOne(num: number): number {
+	return num + 1;
+}

@@ -12,6 +12,8 @@
         "url": "https://github.com/TomRaaff/TS-project-template"
     },
     "scripts": {
+        "start": "npm-run-all -p watch server-start",
+        "test": "node_modules/karma/bin/karma start",
         "clean": "recursive-delete 'dist' && recursive-delete 'compiledjs'",
         "ts": "tsc",
         "js": "rollup --config",
@@ -28,11 +30,10 @@
         "watch-img": "chokidar './src/img/**/*.*' -c 'npm run img'",
         "watch-copy": "chokidar './src/copy/**/*.*' -c 'npm run copy'",
         "watch": "npm-run-all -p build watch-ts watch-css watch-js watch-svg watch-img watch-copy",
-        "server-start": "browser-sync start --files 'dist' --server 'dist'",
-        "start": "npm-run-all -p watch server-start",
-        "test": "jasmine-browser-runner runSpecs"
+        "server-start": "browser-sync start --files 'dist' --server 'dist'"
     },
     "devDependencies": {
+        "@types/jasmine": "^3.7.8",
         "browser-sync": "^2.26.14",
         "chokidar-cli": "^2.1.0",
         "imagemin-cli": "^6.0.0",
@@ -40,6 +41,12 @@
         "imagemin-pngcrush": "^6.0.0",
         "imagemin-pngquant": "^8.0.0",
         "imagemin-zopfli": "^6.0.0",
+        "jasmine-core": "^3.8.0",
+        "karma": "^6.3.4",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-jasmine": "^4.0.1",
+        "karma-jasmine-html-reporter": "^1.6.0",
+        "karma-typescript": "^5.5.1",
         "npm-run-all": "^4.1.5",
         "recursive-fs": "^2.1.0",
         "rollup": "^2.6.1",
