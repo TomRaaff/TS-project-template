@@ -1,9 +1,8 @@
-package-lock.json
-dist/
-TS-project-template.iml
-node_modules/
-coverage/
 .idea/
 !.idea/codeStyles/*
-styles.css
-styles.css.map
+package-lock.json
+compiledjs/
+dist/
+node_modules/
+TS-project-template.iml
+coverage/
