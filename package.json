@@ -1,15 +1,15 @@
 {
-    "name": "build-tools-boilerplate",
+    "name": "TS-project-template",
     "version": "2.0.0",
     "description": "Simple recipes for building and compiling with the CLI.",
     "author": {
-        "name": "Your Name",
-        "url": "https://your-website.com"
+        "name": "Tom Raaff",
+        "url": "https://github.com/TomRaaff"
     },
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "http://github.com/cferdinandi/build-tools-boilerplate"
+        "url": "https://github.com/TomRaaff/TS-project-template"
     },
     "scripts": {
         "clean": "recursive-delete 'dist' && recursive-delete 'compiledjs'",
