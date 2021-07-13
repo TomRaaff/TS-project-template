@@ -33,6 +33,7 @@
         "server-start": "browser-sync start --files 'dist' --server 'dist'"
     },
     "devDependencies": {
+        "@rollup/plugin-node-resolve": "^13.0.0",
         "@types/jasmine": "^3.7.8",
         "browser-sync": "^2.26.14",
         "chokidar-cli": "^2.1.0",
