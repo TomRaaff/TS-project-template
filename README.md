@@ -1,7 +1,7 @@
 # TS Project Template
 A simple template for using NPM tasks to build and compile TypeScript, JavaScript, CSS, and image files.
 Based on [Chris Ferdinandi's Build Tool Boilerplate](https://github.com/cferdinandi/build-tool-boilerplate)
-
+More info on Chris' [build filosophies.](https://open.spotify.com/episode/3bfISkRGO11Srs8Ask7N1H?si=k89d4n7hSgGp-0EpYOeQQw&utm_source=copy-link&dl_branch=1&nd=1)
 
 **Install**
 
