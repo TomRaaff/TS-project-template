@@ -1,20 +1,42 @@
-import { CanvasConfig } from "./types";
+import { StageCollections } from "./stageCollection";
+import { Vector2d } from "./types";
 
 export class Stage {
     private static canvas: HTMLCanvasElement;
     private static context: CanvasRenderingContext2D;
+    private static stageCollections: StageCollections;
 
-    constructor(canvasConfig: CanvasConfig) {
-        Stage.canvas = this.initCanvas();
-        Stage.context = this.initContext();
+    private static lastFrameTime = 0;
+    private static framesPerSecond: 60 | 30 | 20 | 15 | 10 = 30;
+    private static frameMinTime =
+        (1000 / 60) * (60 / Stage.framesPerSecond) - (1000 / 60) * 0.5;
 
-        Stage.configureCanvas(canvasConfig);
+    static init() {
+        Stage.canvas = Stage.createCanvas();
+        Stage.context = Stage.createContext();
+        Stage.stageCollections = new StageCollections();
 
-        Stage.context.fillStyle = "rgb(128, 0, 0)";
+        Stage.configureCanvas();
+
+        Stage.context.fillStyle = "rgb(32, 0, 0)";
         Stage.context.fillRect(0, 0, Stage.canvas.width, Stage.canvas.height);
+
+        requestAnimationFrame(Stage.update); // start animation: ;
     }
 
-    private initCanvas() {
+    private static update(time: number) {
+        if (time - Stage.lastFrameTime < Stage.frameMinTime) {
+            //skip the frame if the call is too early
+            requestAnimationFrame(Stage.update);
+            return; // return as there is nothing to do
+        }
+        Stage.draw();
+        Stage.lastFrameTime = time; // remember the time of the rendered frame
+        // render the frame
+        requestAnimationFrame(Stage.update); // get next farme
+    }
+
+    private static createCanvas() {
         const canvas = document.getElementById("canvas");
 
         if (canvas instanceof HTMLCanvasElement) {
@@ -24,7 +46,7 @@ export class Stage {
         throw "Canvas not supported by this browser";
     }
 
-    private initContext() {
+    private static createContext() {
         const context = Stage.canvas.getContext("2d");
 
         if (context) {
@@ -34,9 +56,13 @@ export class Stage {
         throw "No context found";
     }
 
-    private static configureCanvas({ size, fullScreen }: CanvasConfig) {
-        Stage.canvas.width = fullScreen ? window.innerWidth : size.x;
-        Stage.canvas.height = fullScreen ? window.innerHeight : size.y;
+    private static setCanvasSize(size: Vector2d) {
+        Stage.canvas.width = size.x;
+        Stage.canvas.height = size.y;
+    }
+
+    private static configureCanvas() {
+        Stage.setCanvasSize({ x: window.innerWidth, y: window.innerHeight });
 
         Stage.canvas.addEventListener(
             "click",
@@ -45,6 +71,22 @@ export class Stage {
             },
             false
         );
+
+        window.addEventListener("resize", function () {
+            Stage.setCanvasSize({
+                x: window.innerWidth,
+                y: window.innerHeight,
+            });
+        });
+    }
+
+    static draw() {
+        Stage.stageCollections.getStaticProps().draw();
+        Stage.stageCollections.getActors().draw();
+    }
+
+    static getStageCollections() {
+        return Stage.stageCollections;
     }
 
     static getCanvas() {

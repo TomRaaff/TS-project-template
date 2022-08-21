@@ -1,12 +1,10 @@
 import { Stage } from "./theatre/stage";
-import { StageCollections } from "./theatre/stageCollection";
 import { Actor } from "./theatre/stageElements";
 
 (function () {
     console.log("main.ts loaded");
-    const stage = new Stage({ size: { x: 1200, y: 900 }, fullScreen: true });
-    const stageCollections = new StageCollections();
-    const actors = stageCollections.getActors();
+    Stage.init();
+    const actors = Stage.getStageCollections().getActors();
 
     const quadSize = 50;
 
@@ -20,6 +18,4 @@ import { Actor } from "./theatre/stageElements";
             );
         }
     }
-
-    actors.draw();
 })();

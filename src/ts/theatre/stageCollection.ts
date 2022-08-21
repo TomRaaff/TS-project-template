@@ -18,7 +18,7 @@ export class StageCollections {
     }
 }
 
-export class StageCollection<T extends IStageElement> {
+class StageCollection<T extends IStageElement> {
     private elements: Array<T>;
 
     constructor() {
